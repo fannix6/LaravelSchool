@@ -25,6 +25,7 @@ return new class extends Migration
             $table->decimal('atlag', 2, 1)->nullable();
             $table->decimal('osztondij', 10, 0)->nullable();
             $table->timestamps();
+        
         });
     }
 
