@@ -12,6 +12,6 @@ class SchoolclassSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        //csv-bol
     }
 }

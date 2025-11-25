@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Schoolclass;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -20,12 +21,20 @@ class DatabaseSeeder extends Seeder
 
         //Mielőtt seedelünk, minden táblát töröljünk le.
         DB::statement('DELETE FROM users');
+        DB::statement('DELETE FROM playingsports');
+        DB::statement('DELETE FROM students');
+        DB::statement('DELETE FROM schoolclasses');
+        DB::statement('DELETE FROM sports');
 
 
 
         //Ami Seeder osztály itt fel van sorolva, annak lefut a run() metódusa
         $this->call([
             UserSeeder::class,
+            SchoolclassSeeder::class,
+            SportSeeder::class,
+            StudentSeeder::class,
+            PlayingSportSeeder::class,
         ]);
     }
 }

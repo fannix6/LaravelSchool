@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('students', function (Blueprint $table) {
             $table->id();
             $table->string('diakNev');
-            $table->foreignId('schoolclassId')->constrained('schoolclasses');
-            $table->tinyInteger('neme');
+            $table->foreignId('schoolclassId')->constrained('schoolclasses')->onDelete('cascade');
+            $table->boolean('neme')->default(true);
             $table->string('iranyitoszam')->nullable();
             $table->string('lakHelyseg')->nullable();
             $table->string('lakCim')->nullable();
