@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Helpers\CsvReader;
+use App\Models\Schoolclass;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -13,5 +15,9 @@ class SchoolclassSeeder extends Seeder
     public function run(): void
     {
         //csv-bol
+        $filename = 'csv/schoolclasses.csv';
+        $delimiter = ';';
+        $data = CsvReader::csvToArray($filename, $delimiter);
+        Schoolclass::factory()->createMany($data);
     }
 }

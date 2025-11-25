@@ -1,3 +1,5 @@
+<?php
+
 //Névtér: Ennek a segítségével fogjuk elérni
 namespace App\Helpers;
 
